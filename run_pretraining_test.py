@@ -34,9 +34,9 @@ def _create_config_file(filename, max_seq_length, vocab_size):
   """Creates an AlbertConfig and saves it to file."""
   albert_config = modeling.AlbertConfig(
       vocab_size,
-      embedding_size=5,
-      hidden_size=14,
-      num_hidden_layers=3,
+      embedding_size=128,
+      hidden_size=768,
+      num_hidden_layers=12,
       num_hidden_groups=1,
       num_attention_heads=2,
       intermediate_size=19,

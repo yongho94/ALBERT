@@ -34,16 +34,17 @@ FLAGS = flags.FLAGS
 
 ## Required parameters
 flags.DEFINE_string(
-    "albert_config_file", None,
+    "albert_config_file", '/media/disk1/jyh/ALBERT/ml1mtime/config.json',
     "The config json file corresponding to the pre-trained ALBERT model. "
     "This specifies the model architecture.")
 
+#"input_file", '/media/disk1/jyh/ALBERT/ml1mtime/ml1mtime.tfrecord',
 flags.DEFINE_string(
-    "input_file", None,
+    "input_file", './../sasrecimp/ALBERT_EMB/tmp.tfrecord',
     "Input TF example files (can be a glob or comma separated).")
 
 flags.DEFINE_string(
-    "output_dir", None,
+    "output_dir", '/media/disk1/jyh/ALBERT/ml1mtime/chkpnt',
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
@@ -52,13 +53,13 @@ flags.DEFINE_string(
     "Initial checkpoint (usually from a pre-trained ALBERT model).")
 
 flags.DEFINE_integer(
-    "max_seq_length", 512,
+    "max_seq_length", 103,
     "The maximum total input sequence length after WordPiece tokenization. "
     "Sequences longer than this will be truncated, and sequences shorter "
     "than this will be padded. Must match data generation.")
 
 flags.DEFINE_integer(
-    "max_predictions_per_seq", 20,
+    "max_predictions_per_seq", 7,
     "Maximum number of masked LM predictions per sequence. "
     "Must match data generation.")
 
@@ -66,7 +67,7 @@ flags.DEFINE_bool("do_train", True, "Whether to run training.")
 
 flags.DEFINE_bool("do_eval", False, "Whether to run eval on the dev set.")
 
-flags.DEFINE_integer("train_batch_size", 4096, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 512, "Total batch size for training.")
 
 flags.DEFINE_integer("eval_batch_size", 64, "Total batch size for eval.")
 
